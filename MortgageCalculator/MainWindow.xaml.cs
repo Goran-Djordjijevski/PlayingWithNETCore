@@ -24,5 +24,48 @@ namespace MortgageCalculator
         {
             InitializeComponent();
         }
+
+        static public double amountBorrowed { get; set; }
+        static public double interestRate { get; set; }
+        static public int mortgagePeriod { get; set; }
+
+        private void btnCalculate_Click(object sender, RoutedEventArgs e)
+        {
+            amountBorrowed = (double)Int32.Parse(Amount.Text);
+
+            decimal result;
+            if (Decimal.TryParse(Interest.Text, out result))
+            {
+                interestRate = (double)result;
+            }
+
+            mortgagePeriod = Int32.Parse(Period.Text);
+
+            Payments.Text = CalcMortgage(amountBorrowed, interestRate, mortgagePeriod);
+        }
+
+        private string CalcMortgage(double amountBorrowed,
+                            double interestRate,
+                            int mortgagePeriod)
+        {
+            double p = amountBorrowed;
+            double r = ConvertToMonthlyInterest(interestRate);
+            double n = YearsToMonths(mortgagePeriod);
+
+            var c = (decimal)(((r * p) * Math.Pow((1 + r), n)) /
+                    (Math.Pow((1 + r), n) - 1));
+
+            return ($"${Math.Round(c, MidpointRounding.AwayFromZero)}");
+        }
+
+        private int YearsToMonths(int years)
+        {
+            return (12 * years);
+        }
+
+        private double ConvertToMonthlyInterest(double percent)
+        {
+            return (percent / 12) / 100;
+        }
     }
 }

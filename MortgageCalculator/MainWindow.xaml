@@ -13,7 +13,7 @@
         <Label Name="lblInterest" Content="Interest %&#xA;" HorizontalAlignment="Left" Margin="179,119,0,0" VerticalAlignment="Top"/>
         <Label Name="lblPeriod" Content="Period&#xA;" HorizontalAlignment="Left" Margin="277,119,0,0" VerticalAlignment="Top"/>
         <Label Name="lblMonthlyPayments" Content="Monthly Payments&#xA;" HorizontalAlignment="Left" Margin="171,195,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.499,2.12"/>
-        <Button Name="btnCalculate" Content="Calculate" HorizontalAlignment="Left" Margin="285,235,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="btnCalculate" Content="Calculate" HorizontalAlignment="Left" Margin="285,235,0,0" VerticalAlignment="Top" Width="75" Click="btnCalculate_Click"/>
         <TextBox Name="Amount" HorizontalAlignment="Left" Height="23" Margin="47,147,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116"/>
         <TextBox Name="Interest" HorizontalAlignment="Left" Height="23" Margin="184,147,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="83"/>
         <TextBox Name="Period" HorizontalAlignment="Left" Height="23" Margin="284,147,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="88" RenderTransformOrigin="3.76,0.556"/>
